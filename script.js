@@ -12,7 +12,7 @@ document.getElementById("santa-form").addEventListener("submit", function(event)
             
             // Display the pairing or error message
             if (pairing) {
-                document.getElementById("pairing").textContent = `${name}, you are ${pairing.santa}'s Secret Santa.`;
+                document.getElementById("pairing").textContent = `${name}, you are paired with entrant ${pairing.pair} as your Secret Santa.`;
                 document.getElementById("error").textContent = "";
 
                 // Add the Secret Santa image
@@ -25,9 +25,12 @@ document.getElementById("santa-form").addEventListener("submit", function(event)
                 
                 // Append the image to the pairing div
                 document.getElementById("pairing").appendChild(img);
+
+                // Optionally, add snowman and Christmas tree images
+                addDecorations();
             } else {
                 document.getElementById("pairing").textContent = "";
-                document.getElementById("error").textContent = "Invalid name. Please enter a valid name.";
+                document.getElementById("error").textContent = "Invalid entrant number. Please enter a valid entrant number.";
             }
         })
         .catch(error => {
@@ -38,6 +41,31 @@ document.getElementById("santa-form").addEventListener("submit", function(event)
 
 // Function to get the pairing for the given name
 function getPairing(name, pairingsData) {
-    // Find the pairing where the person's name matches
-    return pairingsData.find(person => person.name.toLowerCase() === name.toLowerCase());
+    // Find the pairing where the entrant number matches
+    return pairingsData.find(person => person.entrant === name);
+}
+
+// Function to add snowman and Christmas tree images as decorations
+function addDecorations() {
+    const snowman = document.createElement('img');
+    snowman.src = 'snowman.png'; // Path to snowman image
+    snowman.alt = 'Snowman';
+    snowman.style.width = '100px'; // Adjust size
+    snowman.style.position = 'absolute';
+    snowman.style.bottom = '5%';
+    snowman.style.left = '10%';
+    snowman.style.zIndex = '10';
+
+    const christmasTree = document.createElement('img');
+    christmasTree.src = 'ct.png'; // Path to Christmas tree image
+    christmasTree.alt = 'Christmas Tree';
+    christmasTree.style.width = '120px'; // Adjust size
+    christmasTree.style.position = 'absolute';
+    christmasTree.style.bottom = '5%';
+    christmasTree.style.right = '10%';
+    christmasTree.style.zIndex = '10';
+
+    // Append the decorations to the body or a specific container
+    document.body.appendChild(snowman);
+    document.body.appendChild(christmasTree);
 }
