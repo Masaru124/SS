@@ -1,0 +1,7 @@
+[
+  { "name": "Yashaswini", "santa": "Vinod" },
+  { "name": "Nagaveni", "santa": "Krishna bharathi" },
+  { "name": "Krishna bharathi", "santa": "Sumitra" },
+  { "name": "Vinod", "santa": "Yashaswini" },
+  { "name": "Sumitra", "santa": "Nagaveni" }
+]
