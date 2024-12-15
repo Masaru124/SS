@@ -17,7 +17,7 @@ document.getElementById("santa-form").addEventListener("submit", function(event)
 
                 // Add the Secret Santa image
                 const img = document.createElement('img');
-                img.src = 'https://img.freepik.com/premium-vector/group-young-people-characters-holding-wine-glasses_1016-5599.jpg?semt=ais_hybrid';
+                img.src = 'santa.png';
                 img.alt = 'Secret Santa Image';
                 img.style.width = '300px'; // Adjust size if needed
                 img.style.display = 'block';
@@ -65,7 +65,5 @@ function addDecorations() {
     christmasTree.style.right = '10%';
     christmasTree.style.zIndex = '10';
 
-    // Append the decorations to the body or a specific container
-    document.body.appendChild(snowman);
-    document.body.appendChild(christmasTree);
+  
 }
