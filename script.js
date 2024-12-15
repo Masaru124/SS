@@ -12,17 +12,17 @@ document.getElementById("santa-form").addEventListener("submit", function(event)
             
             // Display the pairing or error message
             if (pairing) {
-                document.getElementById("pairing").textContent = `${name}, your Secret Santa is ${pairing.santa}.`;
+                document.getElementById("pairing").textContent = `${name}, you are ${pairing.santa}'s Secret Santa.`;
                 document.getElementById("error").textContent = "";
 
                 // Add the Secret Santa image
                 const img = document.createElement('img');
                 img.src = 'https://img.freepik.com/premium-vector/group-young-people-characters-holding-wine-glasses_1016-5599.jpg?semt=ais_hybrid';
                 img.alt = 'Secret Santa Image';
+                img.style.width = '300px'; // Adjust size if needed
+                img.style.display = 'block';
+                img.style.marginTop = '20px';
                 
-                // Add a class to control image size via CSS
-                img.classList.add('secret-santa-image');
-
                 // Append the image to the pairing div
                 document.getElementById("pairing").appendChild(img);
             } else {
