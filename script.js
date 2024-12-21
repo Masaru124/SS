@@ -12,7 +12,7 @@ document.getElementById("santa-form").addEventListener("submit", function(event)
             
            
             if (pairing) {
-                document.getElementById("pairing").textContent = `${name}, you are paired with entrant ${pairing.pair}'s your Secret Santa.`;
+                document.getElementById("pairing").innerHTML = `${name}, you are ${pairing.pair}'s Secret Santa.<br>Go deliver your message.`;
                 document.getElementById("error").textContent = "";
 
                 
